@@ -31,4 +31,9 @@ public class MommifyTest {
     public void shouldMommifyAVowelWhenGivenAVowelAndAConsonant() {
         assertEquals("bmommy", mommifier.mommify("bi"));
     }
+
+    @Test
+    public void shouldNotMommifyAVowelWhenItIs30PercentOrLessOfAWord () {
+        assertEquals("abcd", mommifier.mommify("abcd"));
+    }
 }
