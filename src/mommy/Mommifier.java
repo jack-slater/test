@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class Mommifier {
 
+    private double vowelLimit = 0.3;
     private List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u');
 
     public String mommify(String word) {
@@ -16,15 +17,20 @@ public class Mommifier {
             for (int i = 0; i < word.length(); i++) {
                 char letter = word.charAt(i);
                 if (vowels.contains(letter)) {
-                    result += "mommy";
                     vowelCount += 1;
+                    if (!previousLetterAVowel(word, i)) {
+                        result += "mommy";
+                    }
                 } else {
                     result += letter;
                 }
             }
-        double vowelPercentage = (double) vowelCount / word.length();
-        if (vowelPercentage <= 0.3) return word;
+        if (vowelCount <= vowelLimit * word.length()) result = word;
         return result;
+    }
+
+    private Boolean previousLetterAVowel (String word, int letterPosition) {
+        return letterPosition != 0 && vowels.contains(word.charAt(letterPosition - 1));
     }
 }
 
