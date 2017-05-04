@@ -6,6 +6,6 @@ package mommy;
 public class Mommifier {
 
     public String mommify(String word) {
-        return "";
+        return word;
     }
 }
