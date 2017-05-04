@@ -41,4 +41,14 @@ public class MommifyTest {
     public void shouldMommifyTwoConsecutiveVowelsIntoOnlyOneMommy () {
         assertEquals("rmommyt", mommifier.mommify("riot"));
     }
+
+    @Test
+    public void shouldMommifyManyConsecutiveVowelsIntoOnlyOneMommy_raeiout () {
+        assertEquals("rmommyt", mommifier.mommify("riot"));
+    }
+
+    @Test
+    public void shouldMommifyVowelsAtStartAndEndOfAWord_aebbio () {
+        assertEquals("mommybbmommy", mommifier.mommify("aebbio"));
+    }
 }
