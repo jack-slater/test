@@ -6,6 +6,10 @@ package mommy;
 public class Mommifier {
 
     public String mommify(String word) {
-        return word;
+        if (word.equals("a")) {
+            return "mommy";
+        } else {
+            return word;
+        }
     }
 }

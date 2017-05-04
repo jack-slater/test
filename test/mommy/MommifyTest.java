@@ -20,4 +20,10 @@ public class MommifyTest {
         Mommifier mommifier = new Mommifier();
         assertEquals("b", mommifier.mommify("b"));
     }
+
+    @Test
+    public void shouldMommifyASingleVowel () {
+        Mommifier mommifier = new Mommifier();
+        assertEquals("mommy", mommifier.mommify("a"));
+    }
 }
