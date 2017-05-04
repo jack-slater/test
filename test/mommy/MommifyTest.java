@@ -43,6 +43,11 @@ public class MommifyTest {
     }
 
     @Test
+    public void shouldNotMommifyVowelsWhenExactly30PercentOfWord () {
+        assertEquals("abcdefghij", mommifier.mommify("abcdefghij"));
+    }
+
+    @Test
     public void shouldMommifyManyConsecutiveVowelsIntoOnlyOneMommy_raeiout () {
         assertEquals("rmommyt", mommifier.mommify("riot"));
     }
