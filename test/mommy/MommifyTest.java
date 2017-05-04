@@ -26,4 +26,9 @@ public class MommifyTest {
     public void shouldMommifyASingleVowel () {
         assertEquals("mommy", mommifier.mommify("a"));
     }
+
+    @Test
+    public void shouldMommifyAVowelWhenGivenAVowelAndAConsonant() {
+        assertEquals("bmommy", mommifier.mommify("bi"));
+    }
 }

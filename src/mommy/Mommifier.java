@@ -6,10 +6,15 @@ package mommy;
 public class Mommifier {
 
     public String mommify(String word) {
-        if (word.equals("a")) {
-            return "mommy";
-        } else {
-            return word;
-        }
+        String result = "";
+         for (int i = 0; i < word.length(); i++) {
+             char letter = word.charAt(i);
+             if (letter == 'a' || letter == 'i' ) {
+                 result += "mommy";
+             } else {
+                 result += letter;
+             }
+         }
+        return result;
     }
 }
