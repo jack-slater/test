@@ -14,18 +14,29 @@ public class Mommifier {
     public String mommify(String word) {
         String result = "";
         int vowelCount = 0;
-            for (int i = 0; i < word.length(); i++) {
+        int wordLength = word.length();
+
+        for (int i = 0; i < wordLength; i++) {
                 char letter = word.charAt(i);
                 if (vowels.contains(letter)) {
                     vowelCount += 1;
-                    if (!previousLetterAVowel(word, i)) {
-                        result += "mommy";
-                    }
+                    result = mommifyVowel(word, result, i);
                 } else {
                     result += letter;
                 }
             }
-        if (vowelCount <= vowelLimit * word.length()) result = word;
+
+        return checkVowelCount(vowelCount, wordLength) ? word : result;
+    }
+
+    private boolean checkVowelCount(int vowelCount, int wordLength) {
+        return vowelCount <= vowelLimit * wordLength;
+    }
+
+    private String mommifyVowel(String word, String result, int i) {
+        if (!previousLetterAVowel(word, i)) {
+            result += "mommy";
+        }
         return result;
     }
 
