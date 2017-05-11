@@ -11,24 +11,27 @@ public class Mommifier {
 
     public String mommify(String word) {
         String result = "";
-        int vowelCount = 0;
         int wordLength = word.length();
-
+        if (checkVowelCount(word, wordLength)) return word;
         for (int i = 0; i < wordLength; i++) {
             char letter = word.charAt(i);
             if (vowels.contains(letter)) {
-                vowelCount += 1;
                 result = mommifyVowel(word, result, i);
             } else {
                 result += letter;
             }
         }
-
-        // TODO I think for me it makes more logical sense for this check to happen before the mommification.
-        return checkVowelCount(vowelCount, wordLength) ? word : result;
+        return result;
     }
 
-    private boolean checkVowelCount(int vowelCount, int wordLength) {
+    private boolean checkVowelCount(String word, int wordLength) {
+        int vowelCount = 0;
+        for (int i = 0; i < wordLength; i++) {
+            char letter = word.charAt(i);
+            if (vowels.contains(letter)) {
+                vowelCount += 1;
+            }
+        }
         return vowelCount <= vowelLimit * wordLength;
     }
 
