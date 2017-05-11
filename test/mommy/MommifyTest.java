@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by jack on 04/05/2017.
- */
 public class MommifyTest {
 
     private Mommifier mommifier = new Mommifier();
@@ -28,6 +25,10 @@ public class MommifyTest {
     @Test
     public void shouldMommifyASingleVowel () {
         assertEquals("mommy", mommifier.mommify("a"));
+        assertEquals("mommy", mommifier.mommify("e"));
+        assertEquals("mommy", mommifier.mommify("i"));
+        assertEquals("mommy", mommifier.mommify("o"));
+        assertEquals("mommy", mommifier.mommify("u"));
     }
 
     @Test
@@ -51,12 +52,7 @@ public class MommifyTest {
     }
 
     @Test
-    public void shouldMommifyManyConsecutiveVowelsIntoOnlyOneMommy_raeiout () { // TODO This looks like a duplicate test. See also the comment on the test below
-        assertEquals("rmommyt", mommifier.mommify("riot"));
-    }
-
-    @Test
-    public void shouldMommifyVowelsAtStartAndEndOfAWord_aebbio () { // TODO Try to keep your test names in a consistent style. What value does giving the test string at the end of the method have?
+    public void shouldMommifyVowelsAtStartAndEndOfAWord () {
         assertEquals("mommybbmommy", mommifier.mommify("aebbio"));
     }
 }

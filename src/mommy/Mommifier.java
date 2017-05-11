@@ -3,9 +3,6 @@ package mommy;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by jack on 04/05/2017.
- */
 public class Mommifier {
 
     // TODO Do either of these variables need to change depending on the instantiated object?
@@ -17,16 +14,15 @@ public class Mommifier {
         int vowelCount = 0;
         int wordLength = word.length();
 
-        // TODO Try to keep your indentation consistent, it makes for more readable code
         for (int i = 0; i < wordLength; i++) {
-                char letter = word.charAt(i);
-                if (vowels.contains(letter)) {
-                    vowelCount += 1;
-                    result = mommifyVowel(word, result, i);
-                } else {
-                    result += letter;
-                }
+            char letter = word.charAt(i);
+            if (vowels.contains(letter)) {
+                vowelCount += 1;
+                result = mommifyVowel(word, result, i);
+            } else {
+                result += letter;
             }
+        }
 
         // TODO I think for me it makes more logical sense for this check to happen before the mommification.
         return checkVowelCount(vowelCount, wordLength) ? word : result;
@@ -44,7 +40,7 @@ public class Mommifier {
     }
 
     // TODO If you don't need to use the methods on the Boolean class, it's probably better to stick to the primitive
-    private Boolean previousLetterAVowel (String word, int letterPosition) {
+    private Boolean previousLetterAVowel(String word, int letterPosition) {
         return letterPosition != 0 && vowels.contains(word.charAt(letterPosition - 1));
     }
 }
