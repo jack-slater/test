@@ -32,6 +32,11 @@ public class MommifyTest {
     }
 
     @Test
+    public void shouldNotMommifyStringNumbers () {
+        assertEquals("2", mommifier.mommify("2"));
+    }
+
+    @Test
     public void shouldMommifyAVowelWhenGivenAVowelAndAConsonant() {
         assertEquals("bmommy", mommifier.mommify("bi"));
     }
@@ -55,4 +60,10 @@ public class MommifyTest {
     public void shouldMommifyVowelsAtStartAndEndOfAWord () {
         assertEquals("mommybbmommy", mommifier.mommify("aebbio"));
     }
+
+    @Test
+    public void shouldMommifyVowelsAtTheStartMiddleAndEndOfAWordSeperatedByConsonants () {
+        assertEquals("mommybbmommybbmommylmommy", mommifier.mommify("aabbibbeloo"));
+    }
+
 }
