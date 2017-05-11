@@ -12,6 +12,9 @@ public class MommifyTest {
 
     private Mommifier mommifier = new Mommifier();
 
+    // TODO Are there any more test cases you could add here?
+    // I think there's two cases you've missed: think about what's similar about all of your tests so far, and what
+    // other inputs you could have; and also about the discussion we had around the shouldMommifyASingleVowel test.
     @Test
     public void shouldReturnAnEmptyStringWhenAnEmptyStringIsGiven () {
         assertEquals("", mommifier.mommify(""));
@@ -48,12 +51,12 @@ public class MommifyTest {
     }
 
     @Test
-    public void shouldMommifyManyConsecutiveVowelsIntoOnlyOneMommy_raeiout () {
+    public void shouldMommifyManyConsecutiveVowelsIntoOnlyOneMommy_raeiout () { // TODO This looks like a duplicate test. See also the comment on the test below
         assertEquals("rmommyt", mommifier.mommify("riot"));
     }
 
     @Test
-    public void shouldMommifyVowelsAtStartAndEndOfAWord_aebbio () {
+    public void shouldMommifyVowelsAtStartAndEndOfAWord_aebbio () { // TODO Try to keep your test names in a consistent style. What value does giving the test string at the end of the method have?
         assertEquals("mommybbmommy", mommifier.mommify("aebbio"));
     }
 }
