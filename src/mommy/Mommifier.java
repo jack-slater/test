@@ -13,6 +13,10 @@ public class Mommifier {
         String result = "";
         int wordLength = word.length();
         if (checkVowelCount(word, wordLength)) return word;
+        return mommifyVowels(word, result, wordLength);
+    }
+
+    private String mommifyVowels(String word, String result, int wordLength) {
         for (int i = 0; i < wordLength; i++) {
             char letter = word.charAt(i);
             if (vowels.contains(letter)) {
