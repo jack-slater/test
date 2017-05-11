@@ -5,9 +5,8 @@ import java.util.List;
 
 public class Mommifier {
 
-    // TODO Do either of these variables need to change depending on the instantiated object?
-    private double vowelLimit = 0.3;
-    private List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u');
+    private final double vowelLimit = 0.3;
+    private final List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u');
 
     public String mommify(String word) {
         String result = "";
