@@ -46,7 +46,7 @@ public class Mommifier {
     }
 
     // TODO If you don't need to use the methods on the Boolean class, it's probably better to stick to the primitive
-    private Boolean previousLetterAVowel(String word, int letterPosition) {
+    private boolean previousLetterAVowel(String word, int letterPosition) {
         return letterPosition != 0 && vowels.contains(word.charAt(letterPosition - 1));
     }
 }
