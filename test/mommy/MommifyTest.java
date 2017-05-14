@@ -9,9 +9,6 @@ public class MommifyTest {
 
     private Mommifier mommifier = new Mommifier();
 
-    // TODO Are there any more test cases you could add here?
-    // I think there's two cases you've missed: think about what's similar about all of your tests so far, and what
-    // other inputs you could have; and also about the discussion we had around the shouldMommifyASingleVowel test.
     @Test
     public void shouldReturnAnEmptyStringWhenAnEmptyStringIsGiven () {
         assertEquals("", mommifier.mommify(""));

@@ -5,8 +5,13 @@ import java.util.List;
 
 public class Mommifier {
     // TODO Good use of final, but do they need to be instance variables?
-    private final double vowelLimit = 0.3;
-    private final List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u');
+    private final double vowelLimit;
+    private final List<Character> vowels;
+
+    public Mommifier () {
+        vowelLimit = 0.3;
+        vowels = Arrays.asList('a', 'e', 'i', 'o', 'u');
+    }
 
     public String mommify(String word) {
         String result = "";
